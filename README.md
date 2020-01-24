@@ -1,1 +1,1 @@
-webAppRestaurant
+gestionnaireResto

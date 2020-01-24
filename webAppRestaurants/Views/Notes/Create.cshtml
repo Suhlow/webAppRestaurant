@@ -1,0 +1,48 @@
+﻿@model App.data.Models.Note
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Note</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="note" class="control-label">Note</label>
+                <input asp-for="note" class="form-control" />
+                <span asp-validation-for="note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="date_dv" class="control-label">Date de la dernière visite</label>
+                <input asp-for="date_dv" class="form-control" />
+                <span asp-validation-for="date_dv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="commentaire_dv" class="control-label">Commentaire</label>
+                <input asp-for="commentaire_dv" class="form-control" />
+                <span asp-validation-for="commentaire_dv" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="resto_ID" class="control-label">Restaurant(id)</label>
+                <input asp-for="resto_ID" class="form-control" />
+                <span asp-validation-for="resto_ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

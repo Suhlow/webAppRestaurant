@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Json\ConfigHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Json\appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.1" />
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\App.data\App.data.csproj" />
+    <ProjectReference Include="..\Poule\Poule.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Json\Resources\restos.net.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Db\Resources\" />
+  </ItemGroup>
+
+</Project>

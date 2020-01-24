@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Bienvenu dans notre formidable gestionnaire de restaurants </h1>
+        <p>
+            <em>
+                Retrouvez tout les restaurants dans /Gérer les restaurants <br />
+                  <h3><bold>Merci de prendre le temps de lire la section /A propos</bold></h3>
+            </em>
+        </p>
+        <h2>Voici les 5 meilleurs restaurants de Grenoble !</h2>
+
+    </div>
+
+@model IEnumerable<App.data.Models.Restaurant>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Nom
+            </th>
+            <th>
+                Téléphone
+            </th>
+            <th>
+                Commentaire
+            </th>
+            <th>
+                Contact
+            </th>
+            <th>
+               note
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.commentaire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail_proprio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.note.note)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

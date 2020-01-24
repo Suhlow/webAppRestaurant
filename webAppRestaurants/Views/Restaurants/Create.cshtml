@@ -1,0 +1,78 @@
+﻿@model App.data.Models.Restaurant
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Restaurant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nom" class="control-label">Nom</label>
+                <input asp-for="nom" class="form-control" />
+                <span asp-validation-for="nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="num_tel" class="control-label">Téléphone</label>
+                <input asp-for="num_tel" class="form-control" />
+                <span asp-validation-for="num_tel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="commentaire" class="control-label">Commentaire</label>
+                <input asp-for="commentaire" class="form-control" />
+                <span asp-validation-for="commentaire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mail_proprio" class="control-label">Contact</label>
+                <input asp-for="mail_proprio" class="form-control" />
+                <span asp-validation-for="mail_proprio" class="text-danger"></span>
+            </div>
+            <h4>Note</h4>
+            <div class="form-group">
+                <label asp-for="note" class="control-label">Note</label>
+                <input asp-for="note" class="form-control" />
+                <span asp-validation-for="note" class="text-danger"></span>
+            </div>
+            <h4>Adresse</h4>
+            <div class="form-group">
+                <label asp-for="adresse.num_voie" class="control-label">Numéro de voie</label>
+                <input asp-for="adresse.num_voie" class="form-control" />
+                <span asp-validation-for="adresse.num_voie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adresse.rue" class="control-label">Rue</label>
+                <input asp-for="adresse.rue" class="form-control" />
+                <span asp-validation-for="adresse.rue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adresse.cp" class="control-label">Code postal</label>
+                <input asp-for="adresse.cp" class="form-control" />
+                <span asp-validation-for="adresse.cp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adresse.ville" class="control-label">Ville</label>
+                <input asp-for="adresse.ville" class="form-control" />
+                <span asp-validation-for="adresse.ville" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ajouter" class="btn btn-primary" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<App.data.Models.Restaurant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<p>
+    <a asp-action="Create"><bold>Créer un nouveau restaurant</bold></a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nom
+            </th>
+            <th>
+                Téléphone
+            </th>
+            <th>
+                Commentaire
+            </th>
+            <th>
+                Contact
+            </th>
+            <th>
+                Adresse
+            </th>
+            <th>
+                Note
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.commentaire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail_proprio)
+            </td>
+            <td>
+                @item.adresse.num_voie @item.adresse.rue,@item.adresse.cp @item.adresse.ville
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.note.note)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Détail</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<App.data.Models.Note>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            th>
+            @Html.DisplayNameFor(model => model.resto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date_dv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.commentaire_dv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.resto.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date_dv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.commentaire_dv)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Modifier</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
